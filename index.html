@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio cá nhân của Nguyễn Ngọc Huy - Web Developer chuyên về JavaScript, React, Next.js" />
+  <title>Nguyễn Ngọc Huy - Web Developer</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+  <!-- Loading Screen -->
+  <div class="loading">
+    <div class="loading-content">
+      <div class="loading-spinner"></div>
+      <p class="mt-4 text-blue-600">Loading...</p>
+    </div>
+  </div>
+
+  <header class="bg-white shadow-md py-4 fixed w-full top-0 z-20">
+    <div class="container mx-auto px-6 flex justify-between items-center">
+      <div class="flex items-center space-x-4">
+        <img src="images/huy1.jpg" alt="Logo" class="w-10 h-10 rounded-full border-2 border-blue-500">
+        <span class="font-bold text-lg text-gray-800">Nguyễn Ngọc Huy</span>
+      </div>
+      <nav class="space-x-6 hidden md:block">
+        <a href="#about" class="nav-link text-gray-700 hover:text-blue-600 font-medium">Giới thiệu</a>
+        <a href="#skills" class="nav-link text-gray-700 hover:text-blue-600 font-medium">Kỹ năng</a>
+        <a href="#experience" class="nav-link text-gray-700 hover:text-blue-600 font-medium">Kinh nghiệm</a>
+        <a href="#projects" class="nav-link text-gray-700 hover:text-blue-600 font-medium">Dự án</a>
+        <a href="#contact" class="nav-link text-gray-700 hover:text-blue-600 font-medium">Liên hệ</a>
+      </nav>
+      <!-- Mobile menu button -->
+      <button id="mobile-menu-btn" class="md:hidden text-2xl text-gray-700">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg mt-2 px-6 py-4 rounded-lg">
+      <a href="#about" class="block nav-link py-2 text-gray-700 hover:text-blue-600">Giới thiệu</a>
+      <a href="#skills" class="block nav-link py-2 text-gray-700 hover:text-blue-600">Kỹ năng</a>
+      <a href="#experience" class="block nav-link py-2 text-gray-700 hover:text-blue-600">Kinh nghiệm</a>
+      <a href="#projects" class="block nav-link py-2 text-gray-700 hover:text-blue-600">Dự án</a>
+      <a href="#contact" class="block nav-link py-2 text-gray-700 hover:text-blue-600">Liên hệ</a>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-6 py-32 space-y-24 relative z-10">
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex items-center justify-center">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="text-center md:text-left" data-aos="fade-right">
+          <h2 class="text-5xl font-bold mb-6">Xin chào! 👋</h2>
+          <p class="text-xl mb-8">Tôi là một Web Developer đam mê sáng tạo và xây dựng những trải nghiệm web tuyệt vời.</p>
+          <div class="flex space-x-4 justify-center md:justify-start">
+            <a href="#contact" class="btn-primary">Liên hệ ngay</a>
+            <a href="#projects" class="btn-secondary">Xem dự án</a>
+          </div>
+        </div>
+        <div class="relative" data-aos="fade-left">
+          <div class="w-64 h-64 mx-auto relative">
+            <div class="absolute inset-0 bg-blue-500 rounded-full opacity-20 animate-pulse"></div>
+            <img src="/images/huy1.jpg" alt="Profile" class="w-full h-full object-cover rounded-full border-4 border-white shadow-lg">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Giới thiệu -->
+    <section id="about" data-aos="fade-up">
+      <h2 class="text-3xl font-semibold mb-6 text-center">Giới thiệu</h2>
+      <div class="max-w-3xl mx-auto bg-white/80 backdrop-blur-md p-8 rounded-lg shadow-lg">
+        <div class="flex items-center space-x-4 mb-6">
+          <i class="fas fa-user-circle text-4xl text-blue-500"></i>
+          <h3 class="text-xl font-bold">Về tôi</h3>
+        </div>
+        <p class="text-lg leading-relaxed">Là một sinh viên đam mê phát triển phần mềm, tôi mong muốn rèn luyện kỹ năng Fullstack với JavaScript, Next.js và Golang. Tôi hướng tới việc hiểu rõ quy trình xây dựng và triển khai sản phẩm hoàn chỉnh, đóng góp vào sản phẩm và đội ngũ một cách hiệu quả.</p>
+      </div>
+    </section>
+
+    <!-- Kỹ năng -->
+    <section id="skills" data-aos="fade-up">
+      <h2 class="text-3xl font-semibold mb-6 text-center">Kỹ năng</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="skill-card">
+          <div class="flex items-center space-x-3 mb-4">
+            <i class="fas fa-star text-yellow-400 text-2xl"></i>
+            <h3 class="text-xl font-bold">Thành thạo</h3>
+          </div>
+          <ul class="space-y-4">
+            <li class="skill-item">
+              <div class="flex items-center justify-between mb-2">
+                <span class="flex items-center">
+                  <i class="fab fa-php text-2xl text-blue-500 mr-2"></i>
+                  PHP
+                </span>
+                <span>90%</span>
+              </div>
+              <div class="skill-progress">
+                <div class="skill-progress-bar" style="width: 90%"></div>
+              </div>
+            </li>
+            <li class="skill-item">
+              <div class="flex items-center justify-between mb-2">
+                <span class="flex items-center">
+                  <i class="fab fa-js text-2xl text-yellow-400 mr-2"></i>
+                  JavaScript
+                </span>
+                <span>85%</span>
+              </div>
+              <div class="skill-progress">
+                <div class="skill-progress-bar" style="width: 85%"></div>
+              </div>
+            </li>
+            <li class="skill-item">
+              <div class="flex items-center justify-between mb-2">
+                <span class="flex items-center">
+                  <i class="fab fa-laravel text-2xl text-red-500 mr-2"></i>
+                  Laravel
+                </span>
+                <span>80%</span>
+              </div>
+              <div class="skill-progress">
+                <div class="skill-progress-bar" style="width: 80%"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <div class="flex items-center space-x-3 mb-4">
+            <i class="fas fa-code text-blue-500 text-2xl"></i>
+            <h3 class="text-xl font-bold">Trung bình</h3>
+          </div>
+          <ul class="space-y-4">
+            <li class="skill-item">
+              <div class="flex items-center justify-between mb-2">
+                <span class="flex items-center">
+                  <i class="fab fa-react text-2xl text-blue-400 mr-2"></i>
+                  React
+                </span>
+                <span>75%</span>
+              </div>
+              <div class="skill-progress">
+                <div class="skill-progress-bar" style="width: 75%"></div>
+              </div>
+            </li>
+            <li class="skill-item">
+              <div class="flex items-center justify-between mb-2">
+                <span class="flex items-center">
+                  <i class="fab fa-node-js text-2xl text-green-500 mr-2"></i>
+                  Node.js
+                </span>
+                <span>70%</span>
+              </div>
+              <div class="skill-progress">
+                <div class="skill-progress-bar" style="width: 70%"></div>
+              </div>
+            </li>
+            <li class="skill-item">
+              <div class="flex items-center justify-between mb-2">
+                <span class="flex items-center">
+                  <i class="fab fa-python text-2xl text-blue-600 mr-2"></i>
+                  Python
+                </span>
+                <span>65%</span>
+              </div>
+              <div class="skill-progress">
+                <div class="skill-progress-bar" style="width: 65%"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <div class="flex items-center space-x-3 mb-4">
+            <i class="fas fa-tools text-gray-500 text-2xl"></i>
+            <h3 class="text-xl font-bold">Công cụ khác</h3>
+          </div>
+          <ul class="space-y-4">
+            <li class="skill-item">
+              <div class="flex items-center justify-between mb-2">
+                <span class="flex items-center">
+                  <i class="fab fa-git-alt text-2xl text-orange-500 mr-2"></i>
+                  Git
+                </span>
+                <span>85%</span>
+              </div>
+              <div class="skill-progress">
+                <div class="skill-progress-bar" style="width: 85%"></div>
+              </div>
+            </li>
+            <li class="skill-item">
+              <div class="flex items-center justify-between mb-2">
+                <span class="flex items-center">
+                  <i class="fab fa-docker text-2xl text-blue-600 mr-2"></i>
+                  Docker
+                </span>
+                <span>60%</span>
+              </div>
+              <div class="skill-progress">
+                <div class="skill-progress-bar" style="width: 60%"></div>
+              </div>
+            </li>
+            <li class="skill-item">
+              <div class="flex items-center justify-between mb-2">
+                <span class="flex items-center">
+                  <i class="fas fa-database text-2xl text-blue-400 mr-2"></i>
+                  SQL
+                </span>
+                <span>75%</span>
+              </div>
+              <div class="skill-progress">
+                <div class="skill-progress-bar" style="width: 75%"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kinh nghiệm làm việc -->
+    <section id="experience" data-aos="fade-up">
+      <h2 class="text-3xl font-semibold mb-6 text-center">Kinh nghiệm làm việc</h2>
+      <div class="max-w-3xl mx-auto">
+        <div class="relative">
+          <div class="absolute left-4 top-0 bottom-0 w-0.5 bg-blue-200"></div>
+          <div class="space-y-8">
+            <div class="relative pl-12">
+              <div class="absolute left-0 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
+                <i class="fas fa-briefcase text-white"></i>
+              </div>
+              <div class="bg-white/80 backdrop-blur-md p-6 rounded-lg shadow-lg">
+                <h3 class="text-xl font-bold mb-2">Front End Developer</h3>
+                <p class="text-blue-600 mb-2">Công ty TNHH Năng Lượng Xây Dựng Khang Gia</p>
+                <p class="text-gray-600 mb-4">08/2023 - 12/2023</p>
+                <ul class="space-y-2">
+                  <li class="flex items-start">
+                    <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                    <span>Phát triển giao diện web bằng HTML, CSS, JavaScript</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                    <span>Tối ưu UI/UX với TailwindCSS</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                    <span>Tích hợp RESTful API, làm việc với team Backend</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dự án cá nhân -->
+    <section id="projects" data-aos="fade-up">
+      <h2 class="text-3xl font-semibold mb-6 text-center">Dự án cá nhân</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        
+        <div class="project-card group">
+          <div class="relative overflow-hidden rounded-lg mb-4">
+            <img src="images/model1.png" alt="Portfolio Project" class="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-300">
+            <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <a href="#" class="text-white bg-blue-500 px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">
+                Xem chi tiết
+              </a>
+            </div>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Website Portfolio cá nhân</h3>
+          <p class="text-gray-600 mb-4">02/2024 - 03/2024</p>
+          <p class="mb-4">Dùng Next.js, React, TailwindCSS, GSAP. Triển khai trên Vercel, giới thiệu bản thân và blog chia sẻ IT.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">Next.js</span>
+            <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">React</span>
+            <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">GSAP</span>
+          </div>
+        </div>
+
+        <div class="project-card group">
+            <div class="relative overflow-hidden rounded-lg mb-4">
+              <img src="images/model2.png" alt="Trà Sữa Project" class="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-300">
+              <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <a href="#" class="text-white bg-blue-500 px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">
+                  Xem chi tiết
+                </a>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Trang web bán Trà Sữa</h3>
+            <p class="text-gray-600 mb-4">04/2024 - 06/2024</p>
+            <p class="mb-4">Sử dụng Next.js, TypeScript, Tailwind CSS, Ant Design. Cho phép đặt hàng và thanh toán trực tuyến, tối ưu SEO.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">Next.js</span>
+              <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">TypeScript</span>
+              <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">Tailwind</span>
+            </div>
+          </div>
+      </div>
+    </section>
+
+    <!-- Học vấn -->
+    <section id="education" data-aos="fade-up">
+      <h2 class="text-3xl font-semibold mb-6 text-center">Học vấn</h2>
+      <div class="max-w-3xl mx-auto">
+        <div class="relative">
+          <div class="absolute left-4 top-0 bottom-0 w-0.5 bg-blue-200"></div>
+          <div class="space-y-8">
+            <div class="relative pl-12">
+              <div class="absolute left-0 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
+                <i class="fas fa-graduation-cap text-white"></i>
+              </div>
+              <div class="bg-white/80 backdrop-blur-md p-6 rounded-lg shadow-lg">
+                <h3 class="text-xl font-bold">Đại học Giao Thông Vận Tải Hà Nội</h3>
+                <p class="text-blue-600 mb-2">Cử nhân Công nghệ Thông tin</p>
+                <p class="text-gray-600">2024 - nay</p>
+              </div>
+            </div>
+            <div class="relative pl-12">
+              <div class="absolute left-0 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
+                <i class="fas fa-graduation-cap text-white"></i>
+              </div>
+              <div class="bg-white/80 backdrop-blur-md p-6 rounded-lg shadow-lg">
+                <h3 class="text-xl font-bold">Cao đẳng Công nghệ và Thương mại Hà Nội</h3>
+                <p class="text-blue-600 mb-2">Cao đẳng Công nghệ Thông tin</p>
+                <p class="text-gray-600">2021 - 2023</p>
+                <p class="text-gray-600">GPA: 3.2</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Liên hệ -->
+    <section id="contact" data-aos="fade-up">
+      <h2 class="text-3xl font-semibold mb-6 text-center">Liên hệ</h2>
+      <div class="max-w-3xl mx-auto bg-white/80 backdrop-blur-md p-8 rounded-lg shadow-lg">
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <div class="flex items-center space-x-4 mb-6">
+              <i class="fas fa-envelope text-2xl text-blue-500"></i>
+              <div>
+                <h3 class="font-bold">Email</h3>
+                <a href="mailto:ngochuy2030@gmail.com" class="text-blue-500 hover:text-blue-700">ngochuy2030@gmail.com</a>
+              </div>
+            </div>
+            <div class="flex items-center space-x-4 mb-6">
+              <i class="fas fa-phone text-2xl text-blue-500"></i>
+              <div>
+                <h3 class="font-bold">Điện thoại</h3>
+                <p>0378893821</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="flex items-center space-x-4 mb-6">
+              <i class="fab fa-linkedin text-2xl text-blue-500"></i>
+              <div>
+                <h3 class="font-bold">LinkedIn</h3>
+                <a href="https://www.linkedin.com/in/ng%E1%BB%8Dc-huy-nguy%E1%BB%85n-53179735a/" target="_blank" class="text-blue-500 hover:text-blue-700">Xem hồ sơ</a>
+              </div>
+            </div>
+            <div class="flex items-center space-x-4 mb-6">
+              <i class="fas fa-map-marker-alt text-2xl text-blue-500"></i>
+              <div>
+                <h3 class="font-bold">Địa chỉ</h3>
+                <p>Bắc Từ Liêm, Hà Nội</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-8">
+          <form class="space-y-4">
+            <div class="grid md:grid-cols-2 gap-4">
+              <input type="text" placeholder="Họ và tên" class="form-input">
+              <input type="email" placeholder="Email" class="form-input">
+            </div>
+            <input type="text" placeholder="Tiêu đề" class="form-input">
+            <textarea placeholder="Nội dung" rows="4" class="form-input"></textarea>
+            <button type="submit" class="btn-primary w-full">Gửi tin nhắn</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-gray-100/80 backdrop-blur-md text-center py-4 text-sm text-gray-500 relative z-10">
+    <div class="container mx-auto px-6">
+      <div class="flex justify-center space-x-6 mb-4">
+        <a href="#" class="text-gray-600 hover:text-blue-500 transition-colors">
+          <i class="fab fa-github text-2xl"></i>
+        </a>
+        <a href="#" class="text-gray-600 hover:text-blue-500 transition-colors">
+          <i class="fab fa-linkedin text-2xl"></i>
+        </a>
+        <a href="#" class="text-gray-600 hover:text-blue-500 transition-colors">
+          <i class="fab fa-twitter text-2xl"></i>
+        </a>
+      </div>
+      <p>© 2024 Nguyễn Ngọc Huy. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
