@@ -4,14 +4,6 @@ AOS.init({
   once: true
 });
 
-// Initialize Typed.js
-new Typed('#typed-text', {
-  strings: ['Web Developer', 'JavaScript', 'Next.js', 'React'],
-  typeSpeed: 50,
-  backSpeed: 30,
-  loop: true
-});
-
 // GSAP Animations
 gsap.from('header', {
   y: -100,
@@ -59,16 +51,6 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-// Loading screen
-window.addEventListener('load', () => {
-  const loading = document.querySelector('.loading');
-  if (loading) {
-    loading.style.opacity = '0';
-    setTimeout(() => {
-      loading.style.display = 'none';
-    }, 500);
-  }
-});
 
 // Form submission handling
 const contactForm = document.querySelector('form');
